@@ -1,0 +1,142 @@
+<html>
+<head>
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <style>
+      body {
+          margin: 0;
+      }
+
+      .navbar .sticky {
+          background-color: #f3f3f3;
+      }
+
+      .main-name {
+          display: inline-block;
+          margin-top: 15px;
+          font-size: 20px;
+          color: #da4e43;
+          letter-spacing: 2px;
+      }
+
+      @media (min-width: 768px) {
+          .navbar-left {
+              float: left !important;
+          }
+
+          .navbar-right {
+              float: right !important;
+              margin-right: -10px;
+          }
+
+          .navbar-right ~ .navbar-right {
+              margin-right: 0;
+          }
+      }
+
+      @media (min-width: 768px) {
+          .navbar-nav {
+              float: left;
+              margin: 0;
+          }
+
+          .navbar-nav > li {
+              float: left;
+          }
+
+          .navbar-nav > li > a {
+              padding-top: 16px;
+              padding-bottom: 16px;
+          }
+      }
+
+      .navbar-default .navbar-nav > .active > a,
+      .navbar-default .navbar-nav > .active > a:hover,
+      .navbar-default .navbar-nav > .active > a:focus,
+      .navbar-default .navbar-nav > .open > a,
+      .navbar-default .navbar-nav > .open > a:hover,
+      .navbar-default .navbar-nav > .open > a:focus {
+        background-color: transparent;
+      }
+
+      .navbar-default .navbar-nav > .active > a::after {
+          content: '';
+          display: block;
+          width: 50%;
+          height: 2px;
+          background-color: #da4e43;
+          position: relative;
+          top: 3px;
+          left: 25%;
+          margin-left: -5px;
+          margin-right: -5px;
+          padding-left: 5px;
+          padding-right: 5px;
+          box-sizing: content-box;
+          max-width: 85px;
+          margin-bottom: -2px;
+      }
+
+      .main-name:hover {
+          color: #da4e43;
+          text-decoration: none;
+      }
+
+      li {
+          list-style: none;
+      }
+
+      .lh24 {
+        line-height: 24px;
+      }
+
+      .ft14 {
+          font-size: 14px;
+      }
+
+      .ft16 {
+          font-size: 16px;
+      }
+
+      .color-other {
+          color: #969696;
+      }
+
+    </style>
+</head>
+
+<body>
+    <div>
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="container">
+              <div class="navbar-header">
+                  <a class="main-name" href="#">小荇</a>
+              </div>
+              <div>
+                  <ul class="nav navbar-nav navbar-right">
+                     <!--  <li class="active" role="presentation"> -->
+                      <li class="active">
+                          <a href="#">寓言故事</a>
+                      </li>
+                      <li>
+                          <a href="#">动漫乐园</a>
+                      </li>
+                      <li>
+                          <a href="#">诗词欣赏</a>
+                      </li>
+                      <li>
+                          <a href="#">自然天地</a>
+                      </li>
+                      <li>
+                          <a href="#">开心一笑</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

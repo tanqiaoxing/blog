@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>小荇</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="starter-template.css" rel="stylesheet"> -->
+    <style>
+        body {
+            font-size: 0;
+        }
+
+        p, li {
+            font-size: 14px;
+        }
+
+        .ft0 {
+            font-size: 0;
+        }
+
+        .main {
+            margin-top: 90px;
+        }
+
+        .story-main {
+            display: inline-block;
+            width: 80%;
+            /*margin-top: 90px;*/
+            background-color: #fff;
+        }
+
+        .story {
+            /*margin: 0 auto;*/
+            padding: 25px;
+            background-color: #f2f2f2;
+            border: 1px solid #dbe3e7;
+            border-radius: 3px;
+            box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
+        }
+
+        .story-text {
+            background-color: ;
+        }
+
+        .story-list {
+            display: inline-block;
+            width: 20%;
+            padding-left: 30px;
+            vertical-align: top;
+        }
+
+        .story-list .other {
+            margin: 0;
+            padding: 4px 0 4px 10px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #da4e43;
+            border-radius: 2px;
+        }
+
+        .story-list .story-list-border{
+            border-radius: 3px;
+            border: 1px solid #da4e43;
+            box-shadow: 0 0 1px #da4e43;
+        }
+
+        .story-list .list {
+            padding: 10px;
+        }
+
+        .story-list .list div{
+            color: #333333;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+ </head>
+
+ <body>
+    {% extends "blog/base.html" %}
+    {% block content %}
+    <div class="container">
+    	<div class="main ft0">
+<!--     		<div class="story-main">
+		        <div class="story">
+		            {% for blog in blog_list %}
+		                <h2>{{ blog.title }}</h2>
+		                <p>{{ blog.timestamp|date:"Y-m-d H:i" }}</p>
+		                <p class="story-text">{{ blog.body }}</p>
+		            {% endfor %}
+		        </div>
+		    </div> -->
+		    <div class="story-list">
+		    	<div class="story-list-border">
+		    		<p class="other color-other">其他</p>
+		    		<div class="list">
+		    			{% for post in post_list %}
+			                <div class="ft14 lh24">
+                                <a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a>
+                             <!--    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a> -->
+                            </div>
+			            {% endfor %}
+		    		</div>
+		    	</div>
+		    </div>
+    	</div>
+    </div>
+    {% endblock %}
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
