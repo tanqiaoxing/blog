@@ -48,8 +48,9 @@
             box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
         }
 
-        .story-text {
-            background-color: ;
+        .story p{
+            font-size: 14px;
+            line-height: 24px;
         }
 
         .story-list {
@@ -86,42 +87,89 @@
         }
 
         .story-title {
-
+            margin-bottom: 30px;
+            text-align: center;
         }
 
-        .comment-form {
-            margin-top: 15px;
+        .comment-area {
+            margin-top: 70px;
+            padding: 0 25px 25px;
+            background-color: #f2f2f2;
+        }
+
+        .comment-content {
+            padding: 0 25px 25px;
+            background-color: #f2f2f2;
+        }
+
+        .comment-submit-title {
+            margin-top: 50px;
+            padding: 20px 0 10px;
+            margin-bottom: 30px;
+            font-size: 18px;
+            border-radius: 4px;
+            border-bottom: 2px solid #f2f2f2;
+            background-color: #f2f2f2;
         }
 
         .comment-form input {
-            border: 1px solid #aaa;
-            margin-bottom: 15px;
-            width: 100%;
+            width: 350px;
+            height: 40px;
+            margin-bottom: 20px;
             padding: 15px 15px;
             font-size: 16px;
             line-height: 100%;
-            transition: 0.4s border-color linear;
+            border-radius: 5px;
+            background-color: #fafbfc;
+            border: 1px solid #dbe3e7;
+            /*transition: 0.4s border-color linear;*/
+        }
+
+        .comment-form input:focus {
+            outline: none;
+            border: 1px solid #1277eb;
         }
 
         .comment-form textarea {
-            border: 1px solid #aaa;
-            margin-bottom: 15px;
+            display: inline-block;
             width: 100%;
+            min-height: 183px;
             padding: 15px 15px;
+            /*margin-bottom: 15px;*/
             font-size: 16px;
             line-height: 20px !important;
-            min-height: 183px;
-            transition: 0.4s border-color linear;
+            border-radius: 5px;
+            border: 1px solid #dbe3e7;
+            background-color: #fafbfc;
+            /*transition: 0.4s border-color linear;*/
         }
 
-        .comment-form .comment-btn {
-            background-color: #fff;
-            border: 1px solid #aaa;
-            font-size: 16px;
+        .comment-form textarea:focus {
+            outline: none;
+            border: 1px solid #1277eb;
+        }
+
+        .comment-btn {
+            width: 150px;
+            height: 40px;
+            margin-top: 15px;
             padding: 5px 10px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #fff;
+            background-color: #E45E57;
+            border: 1px solid #da4e43;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .comment-btn:hover {
+            background-color: #DD453A;
         }
 
        .comment-form label {
+            /*display: block;*/
+            margin-right: 10px;
             font-size: 14px;
         }
 
@@ -150,6 +198,17 @@
             font-size: 16px;
         }
 
+        .comment-name,
+        .comment-time {
+            color: #777;
+        }
+
+        .comment-content-li {
+            padding: 10px 0;
+            border-top: 1px solid #dbe3e7;
+            /*border-bottom: 1px solid #777;*/
+        }
+
     </style>
  </head>
 
@@ -163,40 +222,47 @@
                     <h3 class="story-title">{{ post.title }}</h3>
                     <p class="story-text">{{ post.body|safe }}</p>
 		        </div>
-                <form action="{% url 'comments:post_comment' post.pk %}" method="post" class="comment-form">
-                    {% csrf_token %}
+                <div class="comment-area">
                     <div>
-                        <div>
-                            <label for="{{ form.name.id_for_label }}">名字：</label>
-                            {{ form.name }}
-                            {{ form.name.errors }}
-                        </div>
-                        <div>
-                            <label for="{{ form.email.id_for_label }}">邮箱：</label>
-                            {{ form.email }}
-                            {{ form.email.errors }}
-                        </div>
-                        <div>
-                            <label for="{{ form.url.id_for_label }}">URL:</label>
-                            {{ form.url }}
-                            {{ form.url.errors }}
-                        </div>
-                        <div>
-                            <label for="{{ form.text.id_for_label }}">评论：</label>
-                            {{ form.text }}
-                            {{ form.text.errors }}
-                            <button type="submit" class="comment-btn">发表</button>
-                        </div>
+                        <p class="comment-submit-title">畅所欲言</p>
                     </div>
-                </form>
-                <div>
+                    <form action="{% url 'comments:post_comment' post.pk %}" method="post" class="comment-form">
+                        {% csrf_token %}
+                        <div>
+                            <div class="dis-flex flex-between">
+                                <div>
+                                    <label for="{{ form.name.id_for_label }}">名字</label>
+                                    {{ form.name }}
+                                    {{ form.name.errors }}
+                                </div>
+                                <div>
+                                    <label for="{{ form.email.id_for_label }}">邮箱</label>
+                                    {{ form.email }}
+                                    {{ form.email.errors }}
+                                </div>
+                            </div>
+                            <div class="dis-flex" style="width:100%">
+                                <label class="ver-t" for="{{ form.text.id_for_label }}">评论</label>
+                                <div class="flex1">
+                                    {{ form.text }}
+                                    {{ form.text.errors }}
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <button type="submit" class="comment-btn">发表</button>
+                <div class="comment-content">
+                    <p class="comment-submit-title">评论区</p>
                     <ul>
                         {% for comment in comment_list %}
-                        <li>
-                            <span>{{ comment.name }}</span>
-                            <p>{{ comment.created_time|date:"Y-m-d H:i" }}</p>
+                        <li class="comment-content-li">
+                            <p class="comment-name">{{ comment.name }}</p>
                             <div>{{ comment.text }}</div>
+                            <p class="comment-time mt10">{{ comment.created_time|date:"Y-m-d H:i" }}</p>
                         </li>
+                        {% empty %}
+                        暂无评论
                         {% endfor %}
                     </ul>
                 </div>
