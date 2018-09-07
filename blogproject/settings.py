@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'rdgqy@yee=%vyq$#%_4e3x9vr&9&d(@72bt%o^6p4ehn4l4ta$'
+SECRET_KEY = '7fn*my2k8^pi-ozb#!wmu+ros_y#1gkj0whl-&*2f-o+xmy50i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '74.82.204.166', '.tanqiaoxing.com']
 
 
 # Application definition
@@ -120,3 +120,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/tqx/sites/www.tanqiaoxing.com/env/lib/python3.4/site-packages/django/contrib/admin/static/'
