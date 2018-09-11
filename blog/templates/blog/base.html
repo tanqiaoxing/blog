@@ -147,22 +147,23 @@
               </div>
               <div>
                   <ul class="nav navbar-nav navbar-right">
-                     <!--  <li class="active" role="presentation"> -->
-                      <li class="active">
-                          <a href="#">寓言故事</a>
-                      </li>
-                      <li>
-                          <a href="#">动漫乐园</a>
-                      </li>
-                      <li>
-                          <a href="#">诗词欣赏</a>
-                      </li>
-                      <li>
-                          <a href="#">自然天地</a>
-                      </li>
-                      <li>
-                          <a href="#">开心一笑</a>
-                      </li>
+                      <!-- <% for category in category_list %> -->
+                          <li class="active">
+                              <a href="{% url 'blog:detail' pk=1 %}">寓言故事</a>
+                          </li>
+                          <li>
+                              <a href="{% url 'blog:comic' pk=2 %}">动漫乐园</a>
+                          </li>
+                          <li>
+                              <a href="{% url 'blog:poem' pk=3 %}">诗词欣赏</a>
+                          </li>
+                          <li>
+                              <a href="{% url 'blog:nature' pk=6 %}">自然天地</a>
+                          </li>
+                          <li>
+                              <a href="{% url 'blog:funny' pk=5 %}">开心一笑</a>
+                          </li>
+                      <!-- <% endfor %> -->
                   </ul>
               </div>
           </div>
