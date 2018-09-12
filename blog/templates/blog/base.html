@@ -4,6 +4,13 @@
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <style>
+      * {
+          border: 0;
+          padding: 0;
+          margin: 0;
+          text-decoration: none;
+        }
+
       body {
           margin: 0;
           font-family: "Microsoft YaHei";
@@ -137,7 +144,6 @@
       }
 
     </style>
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 </head>
 
 <body>
@@ -148,7 +154,7 @@
                   <a class="main-name" href="#">小荇</a>
               </div>
               <div>
-                  <ul id="navbar-nav" class="nav navbar-nav navbar-right">
+                  <ul class="nav navbar-nav navbar-right">
                       <!-- <% for category in category_list %> -->
                           <li id="navbarLi1">
                               <a href="{% url 'blog:detail' pk=1 %}">寓言故事</a>
