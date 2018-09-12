@@ -6,6 +6,7 @@
     <style>
       body {
           margin: 0;
+		  font-family: "Microsoft YaHei";
       }
 
       .navbar .sticky {
@@ -148,19 +149,19 @@
               <div>
                   <ul class="nav navbar-nav navbar-right">
                       <!-- <% for category in category_list %> -->
-                          <li class="active">
+                          <li id="navbarLi1">
                               <a href="{% url 'blog:detail' pk=1 %}">寓言故事</a>
                           </li>
-                          <li>
+                          <li id="navbarLi2">
                               <a href="{% url 'blog:comic' pk=2 %}">动漫乐园</a>
                           </li>
-                          <li>
+                          <li id="navbarLi3">
                               <a href="{% url 'blog:poem' pk=3 %}">诗词欣赏</a>
                           </li>
-                          <li>
+                          <li id="navbarLi4">
                               <a href="{% url 'blog:nature' pk=4 %}">自然天地</a>
                           </li>
-                          <li>
+                          <li id="navbarLi5">
                               <a href="{% url 'blog:funny' pk=5 %}">开心一笑</a>
                           </li>
                       <!-- <% endfor %> -->
@@ -171,5 +172,22 @@
     </div>
     {% block content %}
     {% endblock %}
+	
+	<script type="text/javascript">
+        window.onload = function(){
+            var url = window.location.href;
+            if(url.indexOf('post') != -1){
+                document.getElementById("navbarLi1").classList.add("active");
+            }else if(url.indexOf('comic') != -1){
+                document.getElementById("navbarLi2").classList.add("active");
+            }else if(url.indexOf('poem') != -1){
+                document.getElementById("navbarLi3").classList.add("active");
+            }else if(url.indexOf('nature') != -1){
+                document.getElementById("navbarLi4").classList.add("active");
+            }else if(url.indexOf('funny') != -1){
+                document.getElementById("navbarLi5").classList.add("active");
+            }
+        }
+    </script>
 </body>
 </html>
