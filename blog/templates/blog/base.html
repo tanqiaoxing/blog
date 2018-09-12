@@ -6,7 +6,7 @@
     <style>
       body {
           margin: 0;
-		  font-family: "Microsoft YaHei";
+          font-family: "Microsoft YaHei";
       }
 
       .navbar .sticky {
@@ -137,6 +137,7 @@
       }
 
     </style>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 </head>
 
 <body>
@@ -147,7 +148,7 @@
                   <a class="main-name" href="#">小荇</a>
               </div>
               <div>
-                  <ul class="nav navbar-nav navbar-right">
+                  <ul id="navbar-nav" class="nav navbar-nav navbar-right">
                       <!-- <% for category in category_list %> -->
                           <li id="navbarLi1">
                               <a href="{% url 'blog:detail' pk=1 %}">寓言故事</a>
@@ -172,8 +173,8 @@
     </div>
     {% block content %}
     {% endblock %}
-	
-	<script type="text/javascript">
+
+    <script type="text/javascript">
         window.onload = function(){
             var url = window.location.href;
             if(url.indexOf('post') != -1){
@@ -189,5 +190,6 @@
             }
         }
     </script>
+
 </body>
 </html>
