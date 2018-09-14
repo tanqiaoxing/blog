@@ -5,8 +5,19 @@ from comments.forms import CommentForm
 
 # Create your views here.
 def index(request):
-	post_list = Post.objects.all().order_by('-created_time')
-	return render(request, 'blog/index.html', context={'post_list': post_list})
+    post_list = Post.objects.filter(category_id=1).order_by('-created_time')[:6]
+    comic_list = Post.objects.filter(category_id=2).order_by('-created_time')[:6]
+    poem_list = Post.objects.filter(category_id=3).order_by('-created_time')[:6]
+    nature_list = Post.objects.filter(category_id=4).order_by('-created_time')[:6]
+
+    context = {
+        'post_list': post_list,
+        'comic_list': comic_list,
+        'poem_list': poem_list,
+        'nature_list': nature_list,
+    }
+
+    return render(request, 'blog/index.html', context=context)
 
 def detail(request, pk):
     post_list = Post.objects.all().filter(category_id=1).exclude(id__in=pk).order_by('-created_time')

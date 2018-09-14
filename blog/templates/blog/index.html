@@ -8,116 +8,203 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>小荇</title>
+    <title>言荇</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/blog/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/blog/css/index.css">
 
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/static/blog/js/index.js"></script>
     <!-- Custom styles for this template -->
     <!-- <link href="starter-template.css" rel="stylesheet"> -->
-    <style>
-        body {
-            font-size: 0;
-        }
 
-        p, li {
-            font-size: 14px;
-        }
-
-        .ft0 {
-            font-size: 0;
-        }
-
-        .main {
-            margin-top: 90px;
-        }
-
-        .story-main {
-            display: inline-block;
-            width: 80%;
-            /*margin-top: 90px;*/
-            background-color: #fff;
-        }
-
-        .story {
-            /*margin: 0 auto;*/
-            padding: 25px;
-            background-color: #f2f2f2;
-            border: 1px solid #dbe3e7;
-            border-radius: 3px;
-            box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
-        }
-
-        .story-text {
-            background-color: ;
-        }
-
-        .story-list {
-            display: inline-block;
-            width: 20%;
-            padding-left: 30px;
-            vertical-align: top;
-        }
-
-        .story-list .other {
-            margin: 0;
-            padding: 4px 0 4px 10px;
-            font-size: 14px;
-            color: #fff;
-            background-color: #da4e43;
-            border-radius: 2px;
-        }
-
-        .story-list .story-list-border{
-            border-radius: 3px;
-            border: 1px solid #da4e43;
-            box-shadow: 0 0 1px #da4e43;
-        }
-
-        .story-list .list {
-            padding: 10px;
-        }
-
-        .story-list .list div{
-            color: #333333;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-    </style>
  </head>
 
  <body>
     {% extends "blog/base.html" %}
     {% block content %}
-    <div class="container">
-    	<div class="main ft0">
-<!--     		<div class="story-main">
-		        <div class="story">
-		            {% for blog in blog_list %}
-		                <h2>{{ blog.title }}</h2>
-		                <p>{{ blog.timestamp|date:"Y-m-d H:i" }}</p>
-		                <p class="story-text">{{ blog.body }}</p>
-		            {% endfor %}
-		        </div>
-		    </div> -->
-		    <div class="story-list">
-		    	<div class="story-list-border">
-		    		<p class="other color-other">其他</p>
-		    		<div class="list">
-		    			{% for post in post_list %}
-			                <div class="ft14 lh24">
-                                <a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a>
-                             <!--    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a> -->
-                            </div>
-			            {% endfor %}
-		    		</div>
-		    	</div>
-		    </div>
-    	</div>
+    <div class="all">
+        <div class="first">
+            <div class="bg"></div>
+            <div class="container">
+                <div class="main">
+                    <p class="desc text-c">Back to childhood</p>
+                    <div class="text">
+                        <p>我要挽那“过去”的年光</p>
+                        <p>但时间的经纬里</p>
+                        <p>已织上了“现在”的丝了</p>
+                    </div>
+                </div>
+            </div>
+            <div class="more">
+                <span class="moreBtn">
+                    <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                    <span>Find more</span>
+                </span>
+            </div>
+        </div>
+        <div class="second">
+            <div class="container1">
+                <div class="module">
+                    <div class="module-same module-fable">
+                        <div class="container">
+                            <p class="title">
+                                <span class="title-icon icon-new-l"></span>
+                                <span>寓言</span>
+                                <!-- <i class="fa fa-bell" aria-hidden="true"></i> -->
+                                <span>故事</span>
+                                <span class="title-icon icon-new-r"></span>
+                            </p>
+                            <ul class="dis-flex flex-between fable-text">
+                                {% for post in post_list %}
+                                <li>
+                                    <p class="fable-text-title text-c">
+                                        <span>{{ post.title }}</span>
+                                        <i class="fa fa-bell-o" aria-hidden="true"></i>
+                                    </p>
+                                    <p class="fable-text-content">{{ post.body }}</p>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            <p class="text-c">
+                                <span>
+                                    <i class="fa fa-chevron-right"></i>
+                                    <i class="fa fa-chevron-right"></i>
+                                    <i class="fa fa-chevron-right"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="module-same-bg">
+                        <div class="container">
+                            <p class="title">
+                                <span>动漫</span>
+                                <i class="fa fa-film" aria-hidden="true"></i>
+                                <span>乐园</span>
+                            </p>
+                            <ul class="dis-flex flex-between module-text img-text">
+                                <li>
+                                    <div class="comic-img-div">
+                                        <img src="/static/blog/img/comic3.jpg" />
+                                        <div class="mask"></div>
+                                    </div>
+                                    <p>我的世界很小，外面的世界很大</p>
+                                </li>
+                                <li>
+                                    <div class="comic-img-div">
+                                        <img src="/static/blog/img/comic22.jpg" />
+                                        <div class="mask"></div>
+                                    </div>
+                                    <p>和软萌“宠物”的快乐生活</p>
+                                </li>
+                                <li>
+                                    <div class="comic-img-div">
+                                        <img src="/static/blog/img/comic33.jpg" />
+                                        <div class="mask"></div>
+                                    </div>
+                                    <p>总要学会一个人长大</p>
+                                </li>
+                                <li>
+                                    <div class="comic-img-div">
+                                        <img src="/static/blog/img/comic44.jpg" />
+                                        <div class="mask"></div>
+                                    </div>
+                                    <p>无法触碰的恋人</p>
+                                </li>
+                            </ul>
+                            <p class="text-c">
+                                <span>
+                                    <i class="fa fa-chevron-right"></i>
+                                    <i class="fa fa-chevron-right"></i>
+                                    <i class="fa fa-chevron-right"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="module-same">
+                        <div class="container">
+                            <p class="title">
+                                <span class="title-icon icon-new-l3"></span>
+                                <span>诗词</span>
+                                <span>欣赏</span>
+                                <span class="title-icon icon-new-r3"></span>
+                            </p>
+                            <ul class="dis-flex flex-between poem-text">
+                                {% for poem in poem_list %}
+                                <li>
+                                    <a href="{% url 'blog:poem' poem.id %}">
+                                        <p class="poem-text-title text-c">
+                                            <span>{{ poem.title }}</span>
+                                            <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+                                        </p>
+                                        <p class="poem-text-content text-c">{{ poem.body|safe }}</p>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            <p class="text-c">
+                                <span>
+                                    <i class="fa fa-chevron-right"></i>
+                                    <i class="fa fa-chevron-right"></i>
+                                    <i class="fa fa-chevron-right"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="module-same-bg">
+                        <div class="container">
+                            <p class="title">
+                                <span>自然</span>
+                                <i class="fa fa-leaf" aria-hidden="true"></i>
+                                <span>天地</span>
+                            </p>
+                            <ul class="dis-flex flex-between module-text img-text">
+                                <li>
+                                    <div class="nature-img-div">
+                                        <img src="/static/blog/img/nature1.jpg" />
+                                        <div class="mask"></div>
+                                    </div>
+                                    <p>我不是一只等待千年的狐</p>
+                                </li>
+                                <li>
+                                    <div class="nature-img-div">
+                                        <img src="/static/blog/img/nature2.jpg" />
+                                        <div class="mask"></div>
+                                    </div>
+                                    <p>恰似含羞带怯</p>
+                                </li>
+                                <li>
+                                    <div class="nature-img-div">
+                                        <img src="/static/blog/img/nature3.jpg" />
+                                        <div class="mask"></div>
+                                    </div>
+                                    <p>我能为你遮风挡雨，也会让你迷失自己</p>
+                                </li>
+                                <li>
+                                    <div class="nature-img-div">
+                                        <img src="/static/blog/img/nature4.jpg" />
+                                        <div class="mask"></div>
+                                    </div>
+                                    <p>你的等待，是否恰逢我开</p>
+                                </li>
+                            </ul>
+                            <p class="text-c">
+                                <span>
+                                    <i class="fa fa-chevron-right"></i>
+                                    <i class="fa fa-chevron-right"></i>
+                                    <i class="fa fa-chevron-right"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     {% endblock %}
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>

@@ -1,5 +1,14 @@
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+  }
+
 body {
     margin: 0;
+    font-family: "Microsoft YaHei";
+    /*background-color: #f5f3ef;*/
 }
 
 .navbar .sticky {
@@ -45,13 +54,18 @@ body {
     }
 }
 
+.navbar-default .navbar-nav>li>a {
+    color: #797572;
+    /*font-weight: 600;*/
+}
+
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .navbar-default .navbar-nav > .active > a::after {
@@ -81,6 +95,14 @@ li {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
 .lh24 {
   line-height: 24px;
 }
@@ -93,6 +115,42 @@ li {
     font-size: 16px;
 }
 
+.fw600 {
+    font-weight: 600;
+}
+
 .color-other {
     color: #969696;
+}
+
+.color-orange {
+    color: #da4e43;
+}
+
+.text-c {
+  text-align: center;
+}
+
+.ver-t {
+    vertical-align: top;
+}
+
+.dis-flex {
+    display: -webkit-box;
+    display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.flex1 {
+    flex: 1;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    -webkit-box-flex: 1;
+}
+
+.flex-between {
+    justify-content: space-between;
 }

@@ -2,148 +2,10 @@
 <head>
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/blog/css/base.css" rel="stylesheet">
+
+    <script src="/static/blog/js/base.js"></script>
     <!-- Custom styles for this template -->
-    <style>
-      * {
-          border: 0;
-          padding: 0;
-          margin: 0;
-          text-decoration: none;
-        }
-
-      body {
-          margin: 0;
-          font-family: "Microsoft YaHei";
-      }
-
-      .navbar .sticky {
-          background-color: #f3f3f3;
-      }
-
-      .main-name {
-          display: inline-block;
-          margin-top: 15px;
-          font-size: 20px;
-          color: #da4e43;
-          letter-spacing: 2px;
-      }
-
-      @media (min-width: 768px) {
-          .navbar-left {
-              float: left !important;
-          }
-
-          .navbar-right {
-              float: right !important;
-              margin-right: -10px;
-          }
-
-          .navbar-right ~ .navbar-right {
-              margin-right: 0;
-          }
-      }
-
-      @media (min-width: 768px) {
-          .navbar-nav {
-              float: left;
-              margin: 0;
-          }
-
-          .navbar-nav > li {
-              float: left;
-          }
-
-          .navbar-nav > li > a {
-              padding-top: 16px;
-              padding-bottom: 16px;
-          }
-      }
-
-      .navbar-default .navbar-nav > .active > a,
-      .navbar-default .navbar-nav > .active > a:hover,
-      .navbar-default .navbar-nav > .active > a:focus,
-      .navbar-default .navbar-nav > .open > a,
-      .navbar-default .navbar-nav > .open > a:hover,
-      .navbar-default .navbar-nav > .open > a:focus {
-        background-color: transparent;
-      }
-
-      .navbar-default .navbar-nav > .active > a::after {
-          content: '';
-          display: block;
-          width: 50%;
-          height: 2px;
-          background-color: #da4e43;
-          position: relative;
-          top: 3px;
-          left: 25%;
-          margin-left: -5px;
-          margin-right: -5px;
-          padding-left: 5px;
-          padding-right: 5px;
-          box-sizing: content-box;
-          max-width: 85px;
-          margin-bottom: -2px;
-      }
-
-      .main-name:hover {
-          color: #da4e43;
-          text-decoration: none;
-      }
-
-      li {
-          list-style: none;
-      }
-
-      .mt10 {
-          margin-top: 10px;
-      }
-
-      .lh24 {
-        line-height: 24px;
-      }
-
-      .ft14 {
-          font-size: 14px;
-      }
-
-      .ft16 {
-          font-size: 16px;
-      }
-
-      .color-other {
-          color: #969696;
-      }
-
-      .text-c {
-        text-align: center;
-      }
-
-      .ver-t {
-          vertical-align: top;
-      }
-
-      .dis-flex {
-          display: -webkit-box;
-          display: flex;
-          display: -ms-flex;
-          display: -webkit-flex;
-          -webkit-flex-wrap: wrap;
-          flex-wrap: wrap;
-      }
-
-      .flex1 {
-          flex: 1;
-          -ms-flex: 1;
-          -webkit-flex: 1;
-          -webkit-box-flex: 1;
-      }
-
-      .flex-between {
-          justify-content: space-between;
-      }
-
-    </style>
 </head>
 
 <body>
@@ -151,7 +13,7 @@
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
           <div class="container">
               <div class="navbar-header">
-                  <a class="main-name" href="#">小荇</a>
+                  <a class="main-name" href="http://www.tanqiaoxing.com">言荇</a>
               </div>
               <div>
                   <ul class="nav navbar-nav navbar-right">
@@ -179,23 +41,6 @@
     </div>
     {% block content %}
     {% endblock %}
-
-    <script type="text/javascript">
-        window.onload = function(){
-            var url = window.location.href;
-            if(url.indexOf('post') != -1){
-                document.getElementById("navbarLi1").classList.add("active");
-            }else if(url.indexOf('comic') != -1){
-                document.getElementById("navbarLi2").classList.add("active");
-            }else if(url.indexOf('poem') != -1){
-                document.getElementById("navbarLi3").classList.add("active");
-            }else if(url.indexOf('nature') != -1){
-                document.getElementById("navbarLi4").classList.add("active");
-            }else if(url.indexOf('funny') != -1){
-                document.getElementById("navbarLi5").classList.add("active");
-            }
-        }
-    </script>
 
 </body>
 </html>
