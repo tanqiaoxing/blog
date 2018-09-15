@@ -86,14 +86,16 @@
                                 <span>乐园</span>
                             </p>
                             <ul class="dis-flex flex-between module-text img-text">
+                                {% for comic in comic_list %}
                                 <li>
                                     <div class="comic-img-div">
-                                        <img src="/static/blog/img/comic3.jpg" />
+                                        <img src="/media/{{comic.img}}" />
                                         <div class="mask"></div>
                                     </div>
                                     <p>我的世界很小，外面的世界很大</p>
                                 </li>
-                                <li>
+                                {% endfor %}
+                                <!-- <li>
                                     <div class="comic-img-div">
                                         <img src="/static/blog/img/comic22.jpg" />
                                         <div class="mask"></div>
@@ -113,7 +115,7 @@
                                         <div class="mask"></div>
                                     </div>
                                     <p>无法触碰的恋人</p>
-                                </li>
+                                </li> -->
                             </ul>
                             <p class="text-c">
                                 <span>
@@ -132,7 +134,7 @@
                                 <span>欣赏</span>
                                 <span class="title-icon icon-new-r3"></span>
                             </p>
-                            <ul class="dis-flex flex-between poem-text">
+                            <ul class="poem-text dis-flex flex-between">
                                 {% for poem in poem_list %}
                                 <li>
                                     <a href="{% url 'blog:poem' poem.id %}">
@@ -140,7 +142,7 @@
                                             <span>{{ poem.title }}</span>
                                             <i class="fa fa-folder-open-o" aria-hidden="true"></i>
                                         </p>
-                                        <p class="poem-text-content text-c">{{ poem.body|safe }}</p>
+                                        <p class="poem-text-content text-c hiddenThree">{{ poem.body|safe }}</p>
                                     </a>
                                 </li>
                                 {% endfor %}

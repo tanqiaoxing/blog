@@ -186,7 +186,7 @@ p, li {
 }
 
 .comment-item .nickname:after {
-    content: ' ¡¤';
+    content: ' ·';
 }
 
 .comment-item .text {
