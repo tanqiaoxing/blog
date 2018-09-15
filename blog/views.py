@@ -20,7 +20,7 @@ def index(request):
     return render(request, 'blog/index.html', context=context)
 
 def detail(request, pk):
-    post_list = Post.objects.all().filter(category_id=1).exclude(id__in=pk).order_by('-created_time')
+    post_list = Post.objects.all().filter(category_id=2).order_by('-created_time')
     # post_list = Post.objects.filter(category=category_pk).order_by('-created_time')
     post = get_object_or_404(Post, pk=pk)
     post.body = markdown.markdown(post.body,
@@ -42,7 +42,7 @@ def detail(request, pk):
 
 
 def comic(request, pk):
-    comic_list = Post.objects.all().filter(category_id=2).exclude(id__in=pk).order_by('-created_time')
+    comic_list = Post.objects.all().filter(category_id=2).order_by('-created_time')
     comic = get_object_or_404(Post, pk=pk)
     comic.body = markdown.markdown(comic.body,
         extensions=[
@@ -63,7 +63,7 @@ def comic(request, pk):
 
 
 def poem(request, pk):
-    poem_list = Post.objects.all().filter(category_id=3).exclude(id__in=pk).order_by('-created_time')
+    poem_list = Post.objects.all().filter(category_id=3).order_by('-created_time')
     poem = get_object_or_404(Post, pk=pk)
     poem.body = markdown.markdown(poem.body,
         extensions=[
@@ -84,7 +84,7 @@ def poem(request, pk):
 
 
 def nature(request, pk):
-    nature_list = Post.objects.all().filter(category_id=4).exclude(id__in=pk).order_by('-created_time')
+    nature_list = Post.objects.all().filter(category_id=4).order_by('-created_time')
     nature = get_object_or_404(Post, pk=pk)
     nature.body = markdown.markdown(nature.body,
         extensions=[
@@ -105,7 +105,7 @@ def nature(request, pk):
 
 
 def funny(request, pk):
-    funny_list = Post.objects.all().filter(category_id=5).exclude(id__in=pk).order_by('-created_time')
+    funny_list = Post.objects.all().filter(category_id=5).order_by('-created_time')
     funny = get_object_or_404(Post, pk=pk)
     funny.body = markdown.markdown(funny.body,
         extensions=[
