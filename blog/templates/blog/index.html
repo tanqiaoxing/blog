@@ -92,30 +92,9 @@
                                         <img src="/media/{{comic.img}}" />
                                         <div class="mask"></div>
                                     </div>
-                                    <p>我的世界很小，外面的世界很大</p>
+                                    <p>{{ comic.experpt }}</p>
                                 </li>
                                 {% endfor %}
-                                <!-- <li>
-                                    <div class="comic-img-div">
-                                        <img src="/static/blog/img/comic22.jpg" />
-                                        <div class="mask"></div>
-                                    </div>
-                                    <p>和软萌“宠物”的快乐生活</p>
-                                </li>
-                                <li>
-                                    <div class="comic-img-div">
-                                        <img src="/static/blog/img/comic33.jpg" />
-                                        <div class="mask"></div>
-                                    </div>
-                                    <p>总要学会一个人长大</p>
-                                </li>
-                                <li>
-                                    <div class="comic-img-div">
-                                        <img src="/static/blog/img/comic44.jpg" />
-                                        <div class="mask"></div>
-                                    </div>
-                                    <p>无法触碰的恋人</p>
-                                </li> -->
                             </ul>
                             <p class="text-c">
                                 <span>
@@ -164,34 +143,15 @@
                                 <span>天地</span>
                             </p>
                             <ul class="dis-flex flex-between module-text img-text">
+                                {% for nature in nature_list %}
                                 <li>
                                     <div class="nature-img-div">
-                                        <img src="/static/blog/img/nature1.jpg" />
+                                        <img src="/media/{{nature.img}}" />
                                         <div class="mask"></div>
                                     </div>
-                                    <p>我不是一只等待千年的狐</p>
+                                    <p>{{ nature.experpt }}</p>
                                 </li>
-                                <li>
-                                    <div class="nature-img-div">
-                                        <img src="/static/blog/img/nature2.jpg" />
-                                        <div class="mask"></div>
-                                    </div>
-                                    <p>恰似含羞带怯</p>
-                                </li>
-                                <li>
-                                    <div class="nature-img-div">
-                                        <img src="/static/blog/img/nature3.jpg" />
-                                        <div class="mask"></div>
-                                    </div>
-                                    <p>我能为你遮风挡雨，也会让你迷失自己</p>
-                                </li>
-                                <li>
-                                    <div class="nature-img-div">
-                                        <img src="/static/blog/img/nature4.jpg" />
-                                        <div class="mask"></div>
-                                    </div>
-                                    <p>你的等待，是否恰逢我开</p>
-                                </li>
+                                {% endfor %}
                             </ul>
                             <p class="text-c">
                                 <span>
